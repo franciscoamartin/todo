@@ -16,7 +16,14 @@ export class AppComponent {
     this.todos.push(new Todo(3, 'Ligar para a empresa', true));
   }
 
-  alteraTexto() {
-    this.title = 'alterar';
+  remove(todo: Todo) {
+    const index = this.todos.indexOf(todo);
+    if (index !== -1) {
+      this.todos.splice(index, 1);
+    }
   }
+
+  markAsDone() {}
+
+  markAsUndone() {}
 }
